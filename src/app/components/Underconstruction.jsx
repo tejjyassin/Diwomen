@@ -192,7 +192,7 @@ export default function Underconstruction() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:justify-center lg:max-w-none lg:items-center">
                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-4xl font-bold text-center tracking-tight text-gray-900 sm:text-6xl">
-                    Something cool is coming soon.
+                    Something cool is coming soon!
                   </h1>
                   <p className="relative mt-6 text-lg text-center leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                     {"Stay tuned for something amazing. We're working on it!"}
