@@ -126,14 +126,17 @@ export default function Hero() {
                     alt=""
                   /> */}
 
-                  {/* <video
+                  <video
                     className="-mt-[50px] w-full my-auto"
                     autoPlay
                     muted
                     loop
                   >
-                    <source src="/assets/hero.mp4" type="video/mp4" />
-                  </video> */}
+                    <source
+                      src="https://absolify.com/hero.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
                 </button>
               </div>
             </div>
