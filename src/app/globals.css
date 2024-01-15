@@ -1,3 +1,151 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    /* --------------------------------
+
+File#: _1_card-v2
+Title: Card v2
+Descr: Container of information used as teasers for further content, often displayed in a gallery of related items
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.card-v2 {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-v2 img {
+    display: block;
+    width: 100%;
+  }
+  
+  .card-v2__caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(hsl(221 39% 11% / 0), hsl(221 39% 11% / 1));
+    background-blend-mode: multiply;
+    @apply text-white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .card-v2--blur-fx .card-v2__caption {
+    @apply bg-gray-900/80;
+    backdrop-filter: blur(10px);
+  }
+  
+  a.card-v2 {
+    display: block;
+    text-decoration: none;
+    transition: box-shadow 0.2s;
+  }
+  a.card-v2:hover {
+    @apply shadow-md;
+  }
+
+  /* --------------------------------
+
+File#: _2_anim-cards
+Title: Animated Cards
+Descr: A collection of cards that slides over time
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+    --anim-cards-width: 280px;
+    --anim-cards-gap: 1.25rem;
+  }
+  
+  @media (min-width: 64rem) {
+    :root {
+      --anim-cards-gap: 2rem;
+    }
+  }
+  
+  @supports (--css: variables) {
+    @media (min-width: 48rem) {
+      :root {
+        --anim-cards-width: 400px;
+      }
+    }
+    @media (min-width: 64rem) {
+      :root {
+        --anim-cards-width: 550px;
+      }
+    }
+  }
+  .anim-cards {
+    overflow: hidden;
+    margin-top: var(--anim-cards-gap);
+    margin-bottom: var(--anim-cards-gap);
+  }
+  
+  .anim-cards__list {
+    display: flex;
+    overflow: auto;
+  }
+  
+  .anim-cards__item {
+    float: left;
+    width: var(--anim-cards-width);
+    flex-shrink: 0;
+    margin-right: var(--anim-cards-gap);
+  }
+  
+  .anim-cards-control {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    @apply bg-gray-900/75;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .anim-cards-control i {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    @apply text-white;
+  }
+  .anim-cards-control i::before, .anim-cards-control i::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: currentColor;
+    transition: clip-path 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .anim-cards-control i::before {
+    clip-path: polygon(1px 1px, 5px 1px, 5px calc(100% - 1px), 1px calc(100% - 1px));
+  }
+  .anim-cards-control i::after {
+    clip-path: polygon(calc(100% - 5px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+  }
+  .anim-cards-control:hover {
+    cursor: pointer;
+    @apply bg-gray-900/95;
+  }
+  .anim-cards-control[aria-pressed=true] i::before {
+    clip-path: polygon(2px 0%, 100% 50%, 100% 50%, 2px 100%);
+  }
+  .anim-cards-control[aria-pressed=true] i::after {
+    clip-path: polygon(calc(100% - 5px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 5px) calc(100% - 1px));
+  }
+  
+  .anim-cards:not(.anim-cards--anim-off) .anim-cards__list {
+    overflow: visible;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .anim-cards--reverse:not(.anim-cards--anim-off) .anim-cards__list {
+    flex-direction: row-reverse;
+  }
+}
