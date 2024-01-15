@@ -133,7 +133,7 @@ export default function Hero() {
                     loop
                   >
                     <source
-                      src="http://diwomen.devagn.com/video/hero.mp4"
+                      src="https://diwomen.devagn.com/video/hero.mp4"
                       type="video/mp4"
                     />
                   </video>
