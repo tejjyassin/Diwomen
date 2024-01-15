@@ -67,7 +67,7 @@ export default function Hero() {
 
               <a
                 href="#about"
-                className="mt-5 w-full rounded-md border border-transparent bg-gray-800 px-6 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2  sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
+                className="mt-5 block rounded-md border border-transparent bg-gray-800 px-6 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2  sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
               >
                 Learn more
               </a>
@@ -114,7 +114,7 @@ export default function Hero() {
                   fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)"
                 />
               </svg>
-              <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+              <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md mt-[150px] sm:mt-0 ">
                 <button
                   type="button"
                   className="relative -mt-[100px] h-[600px] block w-full overflow-hidden rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
